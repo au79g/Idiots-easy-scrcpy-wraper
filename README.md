@@ -88,3 +88,21 @@ Idiots-easy-scrcpy-wraper/
 ├── main.py                  # Main program entry point
 ├── requirements.txt         # Python dependencies
 └── setup.bat                # Automated fresh environment installer script
+
+🙏 Third-Party Attribution & Acknowledgments
+
+EasyScrcpy is an original, independent GUI launcher and controller interface. It relies on and interacts with the open-source software listed below:
+
+    scrcpy
+
+    Developed by Genymobile and licensed under the Apache License 2.0.
+
+    scrcpy provides display and control of Android devices connected over USB or TCP/IP. EasyScrcpy interacts with scrcpy by issuing external command-line arguments to official scrcpy executables. EasyScrcpy does not modify, redistribute source code of, or statically link into scrcpy.
+
+    Android Debug Bridge (ADB)
+
+    Developed by Google / the Android Open Source Project (AOSP), used for device connection management.
+
+📜 License
+
+EasyScrcpy is open-source software licensed under the MIT License. You are free to use, modify, and distribute this wrapper code in according to the terms of the license.
