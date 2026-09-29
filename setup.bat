@@ -67,14 +67,18 @@ if exist "%ZIP_PATH%" (
 )
 echo.
 
-:: 5. Create Desktop Shortcut for Non-Tech Users (Mom's Desktop)
+:: 5. Create Desktop Shortcut for Non-Tech Users
 echo [5/5] Creating EasyScrcpy Desktop Shortcut...
 set "SCRIPT_DIR=%~dp0"
-set "VBS_PATH=%SCRIPT_DIR%EasyScrcpy.vbs"
+:: Strip trailing backslash for clean shortcut creation
+if "%SCRIPT_DIR:~-1%"=="\" set "SCRIPT_DIR=%SCRIPT_DIR:~0,-1%"
+
+set "BAT_PATH=%SCRIPT_DIR%\Run_EasyScrcpy.bat"
 set "DESKTOP_DIR=%USERPROFILE%\Desktop"
 set "SHORTCUT_PATH=%DESKTOP_DIR%\EasyScrcpy.lnk"
 
-powershell -Command "$s = (New-Object -COM WScript.Shell).CreateShortcut('%SHORTCUT_PATH%'); $s.TargetPath = '%VBS_PATH%'; $s.WorkingDirectory = '%SCRIPT_DIR%'; $s.IconLocation = 'control.exe,0'; $s.Save()"
+:: WindowStyle = 7 runs the batch file minimized so it doesn't flash on the screen
+powershell -Command "$s = (New-Object -COM WScript.Shell).CreateShortcut('%SHORTCUT_PATH%'); $s.TargetPath = '%BAT_PATH%'; $s.WorkingDirectory = '%SCRIPT_DIR%'; $s.WindowStyle = 7; $s.IconLocation = 'imageres.dll,109'; $s.Save()"
 
 echo.
 echo ====================================================================
