@@ -88,6 +88,7 @@ Idiots-easy-scrcpy-wraper/
 ├── main.py                  # Main program entry point
 ├── requirements.txt         # Python dependencies
 └── setup.bat                # Automated fresh environment installer script
+---
 
 🙏 Third-Party Attribution & Acknowledgments
 
